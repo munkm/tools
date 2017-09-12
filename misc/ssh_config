@@ -1,0 +1,114 @@
+Host * 
+  ForwardX11 yes
+  ForwardX11Trusted yes
+  # IdentityFile ~/.ssh/gh_id_rsa
+
+# Github
+Host github
+  Hostname github.com
+  User munkm
+  IdentityFile ~/.ssh/gh_id_rsa
+
+# Berkelium
+Host bk
+  Hostname berkelium.nuc.berkeley.edu
+  User munkm
+
+# BRC cluster (savio)
+ Host savio
+  Hostname hpc.brc.berkeley.edu
+  User munkm
+
+ Host savio-transfer
+  Hostname dtn.brc.berkeley.edu
+  User munkm
+
+# create host definition for login1.ornl.gov portal
+# hostname alias 'ornl-login1' will resolve to 'login1.ornl.gov' with ssh
+Host ornl-login1
+  Hostname login1-dev.ornl.gov
+  # automatically use user ID r34 for this account
+  User m15
+  # forward port 22 on each of the following behind-the-firewall machines
+  # to their own local port.  Note: choosing ports in the high range to
+  # avoid possible conflicts 
+  LocalForward 65433 orthanc.ornl.gov:22
+  LocalForward 65434 rnsd.oic.ornl.gov:22
+  LocalForward 65435 code-int.ornl.gov:22
+  LocalForward 65436 angband.ornl.gov:22
+  #LocalForward 65437 fogbugz.ornl.gov:443
+  LocalForward 65438 cpile3.ornl.gov:22
+  LocalForward 65439 remus.ornl.gov:22
+  LocalForward 65441 remus-nas.ornl.gov:22
+  LocalForward 65432 romulus.ornl.gov:22
+
+# for angband
+Host angband
+  Hostname localhost
+  Port 65436
+  User m15
+#  LocalForward 65437 neptune.ornl.gov:80
+#  LocalForward 65438 angband.ornl.gov:8474
+#  LocalForward 65439 angband.ornl.gov:548
+  LocalForward 65440 fogbugz.ornl.gov:443
+  HostKeyAlias angband.ornl.gov
+
+
+# now for orthanc
+Host orthanc
+  Hostname localhost
+  Port 65433
+  User m15
+  HostKeyAlias orhtanc.ornl.gov
+
+# for OIC
+Host oic
+  Hostname localhost
+  Port 65434
+  User m15
+  HostKeyAlias rnsd.oic.ornl.gov
+
+# for neptune
+Host code-int
+  Hostname localhost
+  Port 65435
+  User m15
+  HostKeyAlias code-int.ornl.gov
+
+# for fogbugz
+Host fogbugz
+  Hostname localhost
+  Port 65440
+  User m15@ornl.gov
+  HostKeyAlias fogbugz.ornl.gov
+
+# for cpile2
+Host cpile3
+  Hostname localhost
+  Port 65438
+  User m15
+  HostKeyAlias cpile3.ornl.gov
+
+#for remus
+Host remus
+  Hostname localhost
+  Port 65439
+  User m15
+  HostKeyAlias remus.ornl.gov
+
+#for remus data transfer
+Host remus-nas
+  Hostname localhost
+  Port 65441
+  User m15
+  HostKeyAlias remus-nas.ornl.gov
+
+# for romulus
+Host romulus
+  Hostname localhost
+  Port 65432
+  User m15
+  HostKeyAlias romulus.ornl.gov
+# to access the wiki be ssh'd to ornl-login1, then to angmar in another
+# shell, then you can go to localhost:65437/wiki in a web browser.
+
