@@ -1,0 +1,13 @@
+alias bk="ssh munkm@berkelium.nuc.berkeley.edu"
+# alias ls="ls -G"
+alias sl="ls"
+
+alias vlc="~/../../Applications/VLC.app/Contents/MacOS/VLC"
+
+alias whoareyou="echo I am Rasputin, you silly human!"
+alias howdidyoudie="echo I cannot die."
+alias profilepic="cat ~/Documents/fun_profile/rasputinascii2.txt"
+# alias themesong="afplay -q 1 ~/Documents/fun_profile/rasputin.mp3"
+alias themesong="~/../../Applications/VLC.app/Contents/MacOS/VLC -I rc -V aa 'https://www.youtube.com/watch?v=5yTVWXYctoY'"
+alias whatdoyoulooklike=profilepic
+

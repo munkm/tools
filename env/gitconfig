@@ -1,0 +1,33 @@
+[user]
+	name = Madicken Munk
+	email = madicken.munk@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+	pager = less -r
+	autocrlf = input
+	whitespace = trailing-space,space-before-tab
+[apply]
+	whitespace = fix
+[color]
+	ui = auto
+[alias]
+	autoannex = !auto-annex
+	st = status -s
+	co = checkout
+	dc = diff --cached --ignore-space-change
+	mnc = merge --no-commit --no-ff -s recursive -Xignore-space-change
+	comall = commit --all
+[branch]
+	autosetuprebase = always
+[rebase]
+	autosquash = true
+[push]
+	default = upstream
+[rerere]
+	enabled = true
+[merge]
+	autosetuprebase = always
+# [filter "lfs"]
+#	required = true
+#	clean = git-lfs clean -- %f
+#	smudge = git-lfs smudge -- %f
